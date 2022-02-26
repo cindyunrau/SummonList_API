@@ -10,8 +10,8 @@ This list is easily filterable by almost ALL attributes such as CR, Abilities, S
 
 ## Dev Stack
 
-Front-end: React.js client with React Router, Axios & Bootstrap.
-Back-end: Node.js + Express / Sequelize for REST APIs
+Front-end: React.js client with React Router, Axios & Bootstrap.  
+Back-end: Node.js + Express / Sequelize for REST APIs  
 Database: MySQL
 
 ## Available Scripts
