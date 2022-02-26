@@ -23,4 +23,3 @@ Database: MySQL
 ### Start Server
 
 `node server.js`
-[http://localhost:8080]
