@@ -10,7 +10,7 @@ app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-const db = require("./src/api/models/index.js");
+const db = require("./api/models/index.js");
 
 db.sequelize.sync();
 
@@ -22,7 +22,7 @@ app.get("/", (req, res) => {
   res.json({ message: "Welcome to cindy's application." });
 });
 
-require("./src/api/routes/creature.routes")(app);
+require("./api/routes/creature.routes")(app);
 
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {

@@ -18,6 +18,8 @@ Database: MySQL
 
 In the project directory, you can run:
 
+### `npm install express sequelize mysql2 cors --save`
+
 ### `node server.js`
 
 Starts the back-end server.
