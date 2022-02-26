@@ -1,4 +1,4 @@
-## Summon List (Working Title)
+# Summon List (Working Title)
 
 A list of creatures summonable from spells such as:
 
@@ -16,16 +16,10 @@ Database: MySQL
 
 ## Available Scripts
 
-In the project directory, you can run:
+### install dependencies:
 
-### `npm install express sequelize mysql2 cors --save`
+`npm install express sequelize mysql2 cors --save`
 
-### `node server.js`
+### Start Server [http://localhost:8080]
 
-Starts the back-end server.
-[http://localhost:8080]
-
-### `npm start`
-
-Runs the front-end in the development mode.
-[http://localhost:3000]
+`node server.js`
