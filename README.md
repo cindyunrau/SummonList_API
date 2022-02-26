@@ -8,7 +8,7 @@ A list of creatures summonable from spells such as:
 
 This list is easily filterable by almost ALL attributes such as CR, Abilities, Speed, etc.
 
-## Stack
+## Dev Stack
 
 Front-end: React.js client with React Router, Axios & Bootstrap.
 Back-end: Node.js + Express / Sequelize for REST APIs
@@ -16,10 +16,11 @@ Database: MySQL
 
 ## Available Scripts
 
-### install dependencies:
+### Install Dependencies:
 
 `npm install express sequelize mysql2 cors --save`
 
-### Start Server [http://localhost:8080]
+### Start Server
 
 `node server.js`
+[http://localhost:8080]
