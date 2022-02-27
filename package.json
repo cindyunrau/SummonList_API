@@ -1,7 +1,7 @@
 {
   "name": "summonlist_api",
-  "version" : "0.1",
-  "description" : "Dungeons and Dragons 5e app for filtering/searching summons",
+  "version": "0.1",
+  "description": "Dungeons and Dragons 5e app for filtering/searching summons",
   "author": "cindyunrau",
   "dependencies": {
     "cors": "^2.8.5",

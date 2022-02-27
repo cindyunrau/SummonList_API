@@ -14,7 +14,15 @@ exports.create = (req, res) => {
   const creature = {
       name: req.body.name,
       description: req.body.description,
-      base: req.body.base ? req.body.base : false 
+      base: req.body.base ? req.body.base : false ,
+      cr: req.body.cr,
+      str: req.body.str,
+      dex: req.body.dex,
+      con: req.body.con,
+      int: req.body.int,
+      wis: req.body.wis,
+      cha: req.body.cha,
+
   };
 
   Creature.create(creature)
