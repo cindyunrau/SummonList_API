@@ -23,3 +23,7 @@ Database: MongoDB
 ### Start Server
 
 `node server.js`
+
+### Start Server
+
+On enviornment set up, add a .env file in the root directory with the MongoDB Cluster Connection URI
