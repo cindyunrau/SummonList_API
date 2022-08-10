@@ -11,14 +11,14 @@ This list is easily filterable by almost ALL attributes such as CR, Abilities, S
 ## Dev Stack
 
 Front-end: React.js client with React Router, Axios & Bootstrap.  
-Back-end: Node.js + Express / Sequelize for REST APIs  
-Database: MySQL
+Back-end: Node.js + Express
+Database: MongoDB
 
 ## Available Scripts
 
 ### Install Dependencies:
 
-`npm install express sequelize mysql2 cors --save`
+`npm install mongodb express cors dotenv`
 
 ### Start Server
 

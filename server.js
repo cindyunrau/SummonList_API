@@ -8,23 +8,19 @@ var corsOptions = {
 
 app.use(cors(corsOptions));
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(require("./src/routes/creature.routes"));
 
-const db = require("./api/models/index.js");
-
-// db.sequelize.sync();
-
-db.sequelize.sync({ force: true }).then(() => {
-  console.log("Drop and re-sync db.");
+const db = require("./src/db/conn.js");
+const port = 8081
+app.listen(port, () => {
+  // perform a database connection when server starts
+  db.connectToServer(function (err) {
+    if (err) console.error(err);
+ 
+  });
+  console.log(`Server is running on port: ${port}`);
 });
 
 app.get("/", (req, res) => {
   res.json({ message: "Welcome to cindy's application." });
-});
-
-require("./api/routes/creature.routes")(app);
-
-const PORT = process.env.PORT || 8080;
-app.listen(PORT, () => {
-  console.log(`Server is running!! on port ${PORT}.`);
 });
