@@ -5,6 +5,17 @@ const CREATURES_COLLECTION = "creatures"
 
 function CreatureModel() { };
 
+CreatureModel.getAllCreatures = function (callback) {
+  let db_connect = db.getDb();
+  let query = {};
+
+  db_connect
+  .collection(CREATURES_COLLECTION)
+  .find(query).toArray(function(error, result) {
+    callback(error, result);
+  });
+}
+
 CreatureModel.getCreatureById = function (id, callback) {
   let db_connect = db.getDb();
   let query = { _id: ObjectId(id) };
@@ -62,6 +73,15 @@ CreatureModel.deleteCreature = function (id, callback) {
   let query = { _id: ObjectId(id) };
 
   db_connect.collection(CREATURES_COLLECTION).deleteOne(query, function (error, result) {
+    callback(error, result)
+  }
+)};
+
+CreatureModel.deleteAllCreatures = function (callback) {
+  let db_connect = db.getDb();
+  let query = {};
+
+  db_connect.collection(CREATURES_COLLECTION).deleteMany(query, function (error, result) {
     callback(error, result)
   }
 )};

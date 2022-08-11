@@ -3,16 +3,19 @@ const creatureRouter = express.Router();
 const CreatureModel = require("../models/creature.model");
  
  
-// creatureRouter.route("/creature").get(function (req, res) {
-//  let db_connect = dbo.getDb("summondb");
-//  db_connect
-//    .collection("creatures")
-//    .find({})
-//    .toArray(function (err, result) {
-//      if (err) throw err;
-//      res.json(result);
-//    });
-// });
+creatureRouter.route("/creature").get(function (req, response) {
+  const TAG = "Creature: "
+  CreatureModel.getAllCreatures(function (error, result) {
+    if (error) {
+      console.log(TAG + "ERROR: " + error);
+    } else if (!result) {
+      console.log(TAG + "ERROR: " + "No Creatures in Database :(");
+    } else {
+      console.log(TAG + "Got " + result.length + " Creature(s): ");
+    }
+    response.json(result)
+  });
+});
  
 // Get a creature by Id
 creatureRouter.route("/creature/id/:id").get(function (req, response) {
@@ -79,6 +82,16 @@ creatureRouter.route("/creature/:id").delete(function (req, response) {
   CreatureModel.deleteCreature(req.params.id, function (error, result) {
     if(error) throw error
     console.log(TAG + "Deleted Creature: " + req.params.id)
+    response.json(result)
+  })
+});
+
+// Delete All Creatures
+creatureRouter.route("/creature").delete(function (req, response) {
+  const TAG = "Creature/DeleteAll: "
+  CreatureModel.deleteAllCreatures(function (error, result) {
+    if(error) throw error
+    console.log(TAG + "Deleted All Creatures")
     response.json(result)
   })
 });
