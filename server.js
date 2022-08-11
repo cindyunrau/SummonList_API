@@ -6,7 +6,7 @@ app.use(cors());
 app.use(express.json());
 app.use(require("./src/routes/creature.routes"));
 
-app.get("/api", (req, res) => {
+app.get("/", (req, res) => {
   res.json({ message: "Welcome to cindy's application." });
 });
 
