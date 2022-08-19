@@ -38,6 +38,18 @@ CreatureModel.getCreatureByName = function (name, callback) {
   });
 }
 
+CreatureModel.searchCreatureByName = function (string, callback) {
+  let db_connect = db.getDb();
+  let query = { name: {$regex: string, '$options' : 'i'} };
+
+  db_connect
+  .collection(CREATURES_COLLECTION)
+  .find(query).toArray(function (error, result) {
+    callback(error, result);
+  });
+}
+
+
 CreatureModel.addCreature = function (creature, callback) {
   let db_connect = db.getDb();
 

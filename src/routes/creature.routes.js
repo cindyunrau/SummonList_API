@@ -46,6 +46,21 @@ creatureRouter.route("/creature/name/:name").get(function (req, response) {
     response.json(result)
   });
 });
+
+// Get all creatures by partial/complete name
+creatureRouter.route("/creature/search/name/:name").get(function (req, response) {
+  const TAG = "Creature/Search/Name: "
+  CreatureModel.searchCreatureByName(req.params.name, function (error, result) {
+    if (error) {
+      console.log(TAG + "ERROR: " + error);
+    } else if (!result) {
+      console.log(TAG + "ERROR: " + "No Creatures Found");
+    } else {
+      console.log(TAG + "Got " + result.length + " Creatures.");
+    }
+    response.json(result)
+  });
+});
  
 // Add a creature 
 creatureRouter.route("/creature/add").post(function (req, response) {
